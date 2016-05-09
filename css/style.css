@@ -1,0 +1,196 @@
+body {
+  margin: 16px;
+  padding: 0;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 100%;
+
+  background-color: #EEEEEE;
+  text-align: center;
+}
+
+.info {
+  margin-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D1D1D1;
+}
+.info h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+.info p {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.settings {
+  margin-top: 20px;
+}
+.settings h2 {
+  font-size: 20px;
+  font-weight: 600;
+
+  margin: 0;
+}
+
+.notification {
+  margin: 0 auto;
+  text-align: left;
+
+  padding: 12px 12px 8px 12px;
+
+  border-radius: 2px;
+  background-color: white;
+
+  position: relative;
+
+  -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.12);
+     -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.12);
+      -ms-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.12);
+       -o-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.12);
+          box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.12);
+}
+.small .notification {
+  width: 264px;
+}
+.med .notification {
+  width: 284px;
+}
+.big .notification {
+  width: 324px;
+}
+  .notification span,
+  .notification div {
+    display: inline-block;
+  }
+
+  .notification span {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+
+
+    border-radius: 20px;
+
+    background-color: rgba(0,0,0,.26);
+  }
+  .notification div {
+    position: relative;
+    top: 0;
+  }
+
+  .small .notification input,
+  .small .notification h1,
+  .small .notification p {
+    max-width: 140px;
+    min-width: 140px;
+
+    overflow: hidden;
+  }
+  .med .notification input,
+  .med .notification h1,
+  .med .notification p {
+    max-width: 160px;
+    min-width: 160px;
+
+    overflow: hidden;
+  }
+  .big .notification input,
+  .big .notification h1,
+  .big .notification p {
+    max-width: 200px;
+    min-width: 200px;
+
+    overflow: hidden;
+  }
+
+  .notification input {
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Roboto', sans-serif;
+  }
+  .notification input:focus {
+    border: none;
+    outline: none;
+  }
+
+  .notification h1,
+  .notification p {
+    margin: 0;
+    word-break: keep-all;
+  }
+
+  .notification h1,
+  .notification h1 input {
+    font-size: 16px;
+    font-weight: 400;
+    max-height: 19px;
+
+    margin-bottom: 5px;
+
+    color: rgba(0,0,0,.87);
+  }
+  .notification h1 input {
+    margin: 0;
+  }
+  .notification p,
+  .notification p input {
+    font-size: 14px;
+    max-height: 16px;
+
+    color: rgba(0,0,0,.54);
+  }
+  time {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 12px;
+    color: rgba(0,0,0,.54);
+  }
+
+.phone {
+  text-align: center;
+  padding: 50px 0 0;
+  height: 320px;
+
+  margin: 50px auto 0 auto;
+
+  border-radius: 20px 20px 0 0;
+  background: #242628; /* Old browsers */
+  background: -moz-linear-gradient(top,  #242628 0%, #000000 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #242628 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #242628 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242628', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+.phone .screen {
+  background-color: #303030;
+  margin: 0 auto;
+
+  padding-top: 30px;
+}
+.phone.small {
+  width: 320px;
+}
+.phone.med {
+  width: 340px;
+}
+.phone.big {
+  width: 380px;
+}
+.phone.small .screen {
+  width: 300px;
+  height: 290px;
+}
+.phone.med .screen {
+  width: 320px;
+  height: 290px;
+}
+.phone.big .screen {
+  width: 360px;
+  height: 290px;
+}
