@@ -20,6 +20,8 @@
       </div>
     </div>
 
+    <p class="alert alert-title">Titulek je příliš dlouhý a nebude celý vidět!</p>
+    <p class="alert alert-description">Popisek je příliš dlouhý a nebude celý vidět!</p>
     <div class="phone big">
       <div class="screen">
         <div class="notification big">
@@ -33,12 +35,35 @@
           <time>Datum</time>
         </div>
       </div>
+      <p class="validation-title"></p>
+      <p class="validation-description"></p>
     </div>
     <script>
+      var validationTitle = $('.validation-title'),
+          validationDescription = $('.validation-description');
+
       $(".notification input[name=title]").focus();
 
       $(".settings input").change(function(){
         $(".phone").removeClass("small").removeClass("med").removeClass("big").addClass($(this).val());
+      });
+
+      $("input[name=title]").on("keyup", function(){
+        validationTitle.text($(this).val());
+        if(validationTitle.width() >= 200){
+          $(".alert-title").show();
+        } else {
+          $(".alert-title").hide();
+        }
+      });
+
+      $("input[name=description]").on("keyup", function(){
+        validationDescription.text($(this).val());
+        if(validationDescription.width() >= 200){
+          $(".alert-description").show();
+        } else {
+          $(".alert-description").hide();
+        }
       });
     </script>
   </body>
