@@ -9,6 +9,31 @@ body {
   text-align: center;
 }
 
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
 .info {
   margin-top: 30px;
   padding-bottom: 20px;
@@ -46,11 +71,11 @@ body {
 
   position: relative;
 
-  -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.12);
-     -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.12);
-      -ms-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.12);
-       -o-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.12);
-          box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.12);
+  -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.22);
+     -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.22);
+      -ms-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.22);
+       -o-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.22);
+          box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.22);
 }
 .small .notification {
   width: 264px;
@@ -66,7 +91,7 @@ body {
     display: inline-block;
   }
 
-  .notification span {
+  .notification span:first-child {
     width: 40px;
     height: 40px;
     margin-right: 20px;
@@ -98,6 +123,7 @@ body {
     overflow: hidden;
   }
   .big .notification input,
+  .notifications input,
   .big .notification h1,
   .big .notification p {
     max-width: 200px;
@@ -210,7 +236,111 @@ body {
   width: 320px;
   height: 290px;
 }
-.phone.big .screen {
+.phone.big .screen,
+.notifications {
   width: 360px;
   height: 290px;
+}
+
+.phone button {
+  height: 36px;
+
+  background-color: #549788;
+  border: none;
+  padding: 0 24px;
+  border-radius: 2px;
+
+  text-transform: uppercase;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: white;
+
+  margin-top: 24px;
+
+  -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.22);
+     -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.22);
+      -ms-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.22);
+       -o-box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.22);
+          box-shadow: 0 0 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.22);
+
+  /*display: none;*/
+}
+.phone button:disabled {
+  background-color: rgba(255,255,255,.26);
+  color: rgba(255,255,255,.26);
+
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+      -ms-box-shadow: none;
+       -o-box-shadow: none;
+          box-shadow: none;
+}
+
+.notifications {
+    height: auto;
+
+    border-left: 1px solid #D1D1D1;
+    padding-left: 24px;
+    margin-left: 24px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    background: #242628; /* Old browsers */
+    background: -moz-linear-gradient(top,  #242628 0%, #000000 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #242628 0%,#000000 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #242628 0%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242628', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+  .notifications h2 {
+    color: white;
+  }
+  .notifications .list {
+    position: absolute;
+
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 0 10px;
+
+    overflow: auto;
+  }
+  .notifications ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+    .notifications ul li {
+      position: relative;
+      margin-bottom: 10px;
+    }
+    .notifications ul li.empty {
+      padding: 10px;
+      color: rgba(255,255,255,.87);
+    }
+    .notifications ul li .close {
+      position: absolute;
+      right: 12px;
+      bottom: 8px;
+
+      color: rgba(0,0,0,.54);
+
+      cursor: pointer;
+    }
+    .notifications ul li .close:hover {
+      color: rgba(0,0,0,.87);
+    }
+
+
+.content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 360px;
 }

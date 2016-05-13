@@ -4,10 +4,12 @@
     <meta charset="utf-8">
     <title>Tvorba notifikací pro appku Práce za rohem</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery-1.12.0.min.js"></script>
   </head>
   <body>
+  <div class="content">
     <div class="container">
       <div class="info">
         <h1>Napiš si svou notifikaci</h1>
@@ -34,13 +36,26 @@
 
           <time>Datum</time>
         </div>
+
+        <button disabled>Uložit</button>
       </div>
       <p class="validation-title"></p>
       <p class="validation-description"></p>
     </div>
+  </div>
+
+    <div class="notifications">
+      <h2>Uložené notifikace</h2>
+
+      <div class="list">
+        <ul><li class="empty">Ještě sis žádnou notifikaci nauložil</ul>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
     <script>
       var validationTitle = $('.validation-title'),
-          validationDescription = $('.validation-description');
+          validationDescription = $('.validation-description'),
+          button = $(".phone button");
 
       $(".notification input[name=title]").focus();
 
@@ -52,8 +67,14 @@
         validationTitle.text($(this).val());
         if(validationTitle.width() >= 200){
           $(".alert-title").show();
+          button.attr("disabled", true);
         } else {
           $(".alert-title").hide();
+          button.attr("disabled", false);
+        }
+
+        if($(this).val() == ""){
+          button.attr("disabled", true);
         }
       });
 
@@ -61,9 +82,19 @@
         validationDescription.text($(this).val());
         if(validationDescription.width() >= 200){
           $(".alert-description").show();
+          button.attr("disabled", true);
         } else {
           $(".alert-description").hide();
+          button.attr("disabled", false);
         }
+
+        if($(this).val() == ""){
+          button.attr("disabled", true);
+        }
+      });
+
+      $(".phone button").click(function(){
+        save($(".phone input[name=title]").val(), $(".phone input[name=description]").val());
       });
     </script>
   </body>
